@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelWay — Подорожі твоєї мрії</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body id="top">
+
+    <header class="header" id="navigation">
+        <div class="container navigation">
+
+            <a href="#home" class="logo">
+                Travel<span>Way</span>
+            </a>
+
+            <!-- Кнопка бургер-меню (з'являється на малих екранах) -->
+            <button class="burger" id="burger" type="button"
+                    aria-label="Відкрити меню" aria-expanded="false"
+                    aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav class="menu" id="menu">
+                <a href="#home"><span class="icon">🏠</span> Головна</a>
+
+                <div class="menu-item">
+                    <a href="#tours"><span class="icon">🧭</span> Тури ▾</a>
+                    <div class="submenu">
+                        <a href="#greece">🇬🇷 Греція</a>
+                        <a href="#switzerland">🇨🇭 Швейцарія</a>
+                        <a href="#italy">🇮🇹 Італія</a>
+                    </div>
+                </div>
+
+                <a href="#news"><span class="icon">📰</span> Новини</a>
+                <a href="#about"><span class="icon">ℹ️</span> Про нас</a>
+                <a href="#reviews"><span class="icon">💬</span> Відгуки</a>
+                <a href="#feedback"><span class="icon">✉️</span> Контакти</a>
+            </nav>
+
+            <form class="search" action="#tours">
+                <input type="search" name="q"
+                       placeholder="Пошук"
+                       aria-label="Пошук">
+                <button type="submit" aria-label="Шукати">⌕</button>
+            </form>
+
+            <!-- Кнопка Sign in: на малих екранах стає нерухомою (fixed) -->
+            <button type="button" class="sign-in" id="signInBtn">Sign in</button>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section id="home" class="hero">
+            <div class="container">
+                <p class="subtitle">
+                    ПОДОРОЖУЙ. ВІДКРИВАЙ. НАСОЛОДЖУЙСЯ.
+                </p>
+
+                <h1>
+                    Подорожі,<br>
+                    <span>які запам'ятаються</span>
+                </h1>
+
+                <p class="hero-text">
+                    Обирай напрямок, бронюй тур
+                    і вирушай назустріч новим враженням.
+                </p>
+
+                <a href="#tours" class="button">
+                    Переглянути тури →
+                </a>
+            </div>
+        </section>
+
+        <section id="tours" class="section">
+            <div class="container">
+                <p class="subtitle">НАШІ НАПРЯМКИ</p>
+                <h2>Популярні тури</h2>
+
+                <div class="cards">
+
+                    <article class="card reveal" id="greece">
+                        <div class="card-image greece">
+                            <span>Популярне</span>
+                            <div class="image-text">
+                                Відкрий для себе сонячну Грецію
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <p class="country">ГРЕЦІЯ</p>
+                            <h3>Острів Санторіні</h3>
+                            <p>7 днів · Сніданки · Переліт</p>
+                            <strong>від 18 900 ₴</strong>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" id="switzerland">
+                        <div class="card-image swiss">
+                            <span>NEW</span>
+                            <div class="image-text">
+                                Альпійські краєвиди Швейцарії
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <p class="country">ШВЕЙЦАРІЯ</p>
+                            <h3>Альпійська пригода</h3>
+                            <p>6 днів · Готель · Екскурсії</p>
+                            <strong>від 24 500 ₴</strong>
+                        </div>
+                    </article>
+
+                    <article class="card reveal" id="italy">
+                        <div class="card-image italy">
+                            <span>TOP</span>
+                            <div class="image-text">
+                                Відчуй атмосферу Італії
+                            </div>
+                        </div>
+
+                        <div class="card-content">
+                            <p class="country">ІТАЛІЯ</p>
+                            <h3>Рим та Флоренція</h3>
+                            <p>5 днів · Готель · Сніданки</p>
+                            <strong>від 16 700 ₴</strong>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="news" class="section gray">
+            <div class="container">
+                <p class="subtitle">ОСТАННІ ПУБЛІКАЦІЇ</p>
+                <h2>Новини та поради</h2>
+
+                <div class="news">
+                    <article class="news-item reveal">
+                        <div class="news-icon">✈️</div>
+                        <div>
+                            <small>15 вересня 2026</small>
+                            <h3>Як підготуватися до першої подорожі?</h3>
+                            <p>Що варто перевірити перед вильотом.</p>
+                        </div>
+                    </article>
+
+                    <article class="news-item reveal">
+                        <div class="news-icon">☀️</div>
+                        <div>
+                            <small>10 вересня 2026</small>
+                            <h3>Топ-5 місць для осіннього відпочинку</h3>
+                            <p>Добірка напрямків для комфортного відпочинку.</p>
+                        </div>
+                    </article>
+
+                    <article class="news-item reveal">
+                        <div class="news-icon">🧳</div>
+                        <div>
+                            <small>4 вересня 2026</small>
+                            <h3>Що взяти із собою у подорож?</h3>
+                            <p>Поради щодо багажу та документів.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <p class="subtitle">ЧОМУ TRAVELWAY</p>
+                <h2>Ми створюємо подорожі з душею</h2>
+
+                <p>
+                    Допомагаємо обрати напрямок,
+                    спланувати маршрут і отримати
+                    максимум позитивних вражень.
+                </p>
+
+                <div class="statistics">
+                    <div>
+                        <strong data-count="8" data-suffix="+">8+</strong>
+                        <span>років роботи</span>
+                    </div>
+
+                    <div>
+                        <strong data-count="12000" data-suffix="">12 000</strong>
+                        <span>туристів</span>
+                    </div>
+
+                    <div>
+                        <strong data-count="40" data-suffix="+">40+</strong>
+                        <span>напрямків</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секція зворотного зв'язку з відгуками користувачів -->
+        <section id="reviews" class="section gray">
+            <div class="container">
+                <p class="subtitle">ЗВОРОТНИЙ ЗВ'ЯЗОК</p>
+                <h2>Відгуки наших мандрівників</h2>
+
+                <div class="reviews">
+                    <article class="review reveal">
+                        <div class="review-head">
+                            <div class="avatar">ОК</div>
+                            <div>
+                                <h3>Олена Коваль</h3>
+                                <small>Тур: Санторіні</small>
+                            </div>
+                        </div>
+                        <p class="stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+                        <p>Все було організовано чудово: переліт, готель і
+                           екскурсії. Менеджер відповідав на будь-які питання.</p>
+                    </article>
+
+                    <article class="review reveal">
+                        <div class="review-head">
+                            <div class="avatar">АП</div>
+                            <div>
+                                <h3>Андрій Петренко</h3>
+                                <small>Тур: Альпійська пригода</small>
+                            </div>
+                        </div>
+                        <p class="stars" aria-label="Оцінка 5 з 5">★★★★★</p>
+                        <p>Неймовірні краєвиди! Програма була насиченою, але
+                           без поспіху. Обов'язково поїдемо ще раз.</p>
+                    </article>
+
+                    <article class="review reveal">
+                        <div class="review-head">
+                            <div class="avatar">МШ</div>
+                            <div>
+                                <h3>Марія Шевченко</h3>
+                                <small>Тур: Рим та Флоренція</small>
+                            </div>
+                        </div>
+                        <p class="stars" aria-label="Оцінка 4 з 5">★★★★☆</p>
+                        <p>Дуже сподобалась атмосфера Італії та гід. Єдине
+                           побажання — трохи більше вільного часу.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback" class="section">
+            <div class="container form-section">
+                <div>
+                    <p class="subtitle">КОНТАКТИ</p>
+                    <h2>Розкажіть нам про свою мрію</h2>
+                    <p>Залиште повідомлення, і наш менеджер зв'яжеться з вами.</p>
+                </div>
+
+                <form class="form" action="#feedback">
+                    <label for="name">Ім'я</label>
+                    <input id="name" name="name" type="text"
+                           placeholder="Ваше ім'я" required>
+
+                    <label for="email">Електронна пошта</label>
+                    <input id="email" name="email" type="email"
+                           placeholder="name@example.com" required>
+
+                    <label for="message">Повідомлення</label>
+                    <textarea id="message" name="message" rows="5"
+                              placeholder="Ваше повідомлення"></textarea>
+
+                    <div class="buttons">
+                        <button type="submit" class="button">Надіслати</button>
+                        <button type="reset" class="reset">Очистити</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="survey" class="section gray">
+            <div class="container survey">
+                <p class="subtitle">ОПИТУВАЛЬНИК</p>
+                <h2>Допоможіть нам підібрати тур</h2>
+
+                <form action="#survey">
+                    <label for="survey-login">Логін</label>
+                    <input id="survey-login" name="login" type="text"
+                           placeholder="Ваш логін" required>
+
+                    <label for="survey-email">Email</label>
+                    <input id="survey-email" name="email" type="email"
+                           placeholder="name@example.com" required>
+
+                    <label for="destination">Бажаний напрямок</label>
+                    <select id="destination" name="destination">
+                        <option value="europe" selected>Європа</option>
+                        <option value="asia">Азія</option>
+                        <option value="america">Америка</option>
+                        <option value="other">Інше</option>
+                    </select>
+
+                    <fieldset>
+                        <legend>Тип відпочинку</legend>
+                        <label>
+                            <input type="radio" name="type" value="sea" checked>
+                            Море
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="excursion">
+                            Екскурсії
+                        </label>
+                        <label>
+                            <input type="radio" name="type" value="mountains">
+                            Гори
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Що для вас важливо?</legend>
+                        <label>
+                            <input type="checkbox" name="comfort" value="hotel">
+                            Комфортний готель
+                        </label>
+                        <label>
+                            <input type="checkbox" name="food" value="food">
+                            Харчування
+                        </label>
+                        <label>
+                            <input type="checkbox" name="activities" value="activities">
+                            Активності
+                        </label>
+                    </fieldset>
+
+                    <label for="comment">Додаткові побажання</label>
+                    <textarea id="comment" name="comment" rows="4"
+                              placeholder="Ваші побажання"></textarea>
+
+                    <div class="buttons">
+                        <button type="submit" class="button">Відправити</button>
+                        <button type="reset" class="reset">Очистити</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#home" class="logo">Travel<span>Way</span></a>
+            <p>© 2026 TravelWay. Навчальний проєкт.</p>
+            <a href="#home">На початок ↑</a>
+        </div>
+    </footer>
+
+    <!-- Кнопка «вгору» з плавним переходом -->
+    <a href="#top" class="back-to-top" id="backToTop" aria-label="Повернутися на початок">↑</a>
+
+    <!-- Модальне вікно з формою автентифікації -->
+    <div class="modal" id="authModal" aria-hidden="true">
+        <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button type="button" class="modal-close" id="modalClose" aria-label="Закрити">×</button>
+
+            <div class="tabs">
+                <button type="button" class="tab active" data-tab="loginTab">Вхід</button>
+                <button type="button" class="tab" data-tab="registerTab">Реєстрація</button>
+            </div>
+
+            <form class="auth-form tab-panel active" id="loginTab" action="#">
+                <h2 id="modalTitle">Вхід</h2>
+
+                <label for="auth-email">Email</label>
+                <input id="auth-email" name="auth-email" type="email"
+                       placeholder="name@example.com" required>
+
+                <label for="password">Пароль</label>
+                <input id="password" name="password" type="password"
+                       minlength="6" placeholder="Мінімум 6 символів" required>
+
+                <div class="buttons">
+                    <button type="submit" class="button">Увійти</button>
+                    <button type="reset" class="reset">Очистити</button>
+                </div>
+            </form>
+
+            <form class="auth-form tab-panel" id="registerTab" action="#">
+                <h2>Створити акаунт</h2>
+
+                <label for="reg-email">Email</label>
+                <input id="reg-email" name="reg-email" type="email"
+                       placeholder="name@example.com" required>
+
+                <label for="reg-password">Пароль</label>
+                <input id="reg-password" name="reg-password" type="password"
+                       minlength="6" placeholder="Мінімум 6 символів" required>
+
+                <label for="repeat-password">Повторіть пароль</label>
+                <input id="repeat-password" name="repeat-password" type="password"
+                       minlength="6" placeholder="Повторіть пароль" required>
+
+                <div class="buttons">
+                    <button type="submit" class="button">Зареєструватися</button>
+                    <button type="reset" class="reset">Очистити</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

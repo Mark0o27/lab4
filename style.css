@@ -1,0 +1,921 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background: white;
+    line-height: 1.6;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ================= HEADER ================= */
+.header {
+    position: relative;
+    z-index: 10;
+    padding: 15px 0;
+    background: linear-gradient(#ddd, white, #ddd);
+    border-bottom: 1px solid #aaa;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.logo span {
+    color: steelblue;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu a {
+    color: #044368;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: steelblue;
+    text-decoration: underline;
+}
+
+.menu .icon {
+    display: none; /* значки показуємо лише в мобільному меню */
+}
+
+.menu-item {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px #0002;
+}
+
+.submenu a {
+    display: block;
+    padding: 7px;
+}
+
+.submenu a:hover {
+    background: #e6f4f8;
+}
+
+.menu-item:hover .submenu,
+.menu-item:focus-within .submenu {
+    display: block;
+}
+
+/* Бургер-кнопка */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 9px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: #044368;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.burger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    width: 180px;
+    padding: 3px 5px 3px 12px;
+    border: 1px solid #aaa;
+    border-radius: 25px;
+    background: white;
+}
+
+.search input {
+    width: 100%;
+    min-width: 0;
+    padding: 7px 0;
+    border: none;
+    outline: none;
+}
+
+.search button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: steelblue;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Кнопка Sign in */
+.sign-in {
+    padding: 9px 20px;
+    border: 2px solid steelblue;
+    border-radius: 25px;
+    background: white;
+    color: #044368;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+.sign-in:hover {
+    background: steelblue;
+    color: white;
+}
+
+/* ================= HERO ================= */
+.hero {
+    padding: 80px 0;
+    background: #e6f4f8;
+}
+
+.hero h1 {
+    font-size: 45px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 2px #aaa;
+}
+
+.hero h1 span {
+    color: steelblue;
+}
+
+.hero-text {
+    max-width: 550px;
+    font-size: 18px;
+}
+
+/* Анімація появи тексту в hero (один раз при завантаженні) */
+.hero .container > * {
+    animation: slideUp 0.7s ease both;
+}
+
+.hero .container > *:nth-child(2) { animation-delay: 0.1s; }
+.hero .container > *:nth-child(3) { animation-delay: 0.2s; }
+.hero .container > *:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    color: steelblue;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: steelblue;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.button:hover {
+    background: #285f85;
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.section {
+    padding: 50px 0;
+}
+
+.gray {
+    background: #eef0f1;
+}
+
+h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 19px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: white;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #0002;
+}
+
+.card-image {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: 180px;
+    padding: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.greece {
+    background-color: #76a9e8;
+    background-image: url("https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1000&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.swiss {
+    background-color: #8eae94;
+    background-image: url("https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=1000&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.italy {
+    background-color: #e7b49d;
+    background-image: url("https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?auto=format&fit=crop&w=1000&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+.card-image span {
+    position: relative;
+    z-index: 2;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background: steelblue;
+    color: white;
+}
+
+.image-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #17364bbd;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.card-image:hover .image-text {
+    opacity: 1;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.country {
+    color: steelblue;
+    font-weight: bold;
+}
+
+.card-content strong {
+    color: steelblue;
+}
+
+/* ================= NEWS ================= */
+.news {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: white;
+}
+
+.news-icon {
+    font-size: 30px;
+    transition: transform 0.3s;
+}
+
+.news-item:hover .news-icon {
+    transform: rotate(-10deg) scale(1.15);
+}
+
+.news-item small {
+    color: #777;
+}
+
+.news-item h3 {
+    margin: 5px 0;
+}
+
+/* ================= STATISTICS / ABOUT ================= */
+.statistics {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.statistics div {
+    text-align: center;
+}
+
+.statistics strong {
+    display: block;
+    color: steelblue;
+    font-size: 30px;
+}
+
+.statistics span {
+    font-size: 14px;
+}
+
+.about > .container > p:not(.subtitle) {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ================= REVIEWS ================= */
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: white;
+}
+
+.review p {
+    margin: 8px 0 0;
+}
+
+.review-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.review-head h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.review-head small {
+    color: #777;
+}
+
+.avatar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: steelblue;
+    color: white;
+    font-weight: bold;
+}
+
+.stars {
+    color: #e8a317;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+/* ================= FORMS ================= */
+.form-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.form-section > div,
+.form-section > form {
+    width: 50%;
+}
+
+.form,
+.auth-form {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background: white;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 9px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: steelblue;
+    outline: 2px solid #4682b433;
+}
+
+fieldset {
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+fieldset label {
+    font-weight: normal;
+}
+
+fieldset input {
+    width: auto;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.reset {
+    padding: 10px 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background: #ddd;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background: #bbb;
+}
+
+.survey {
+    max-width: 700px;
+}
+
+/* ================= MODAL ================= */
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: #17364bcc;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    max-height: 100%;
+    padding: 25px 20px 20px;
+    overflow-y: auto;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 10px 30px #0005;
+    transform: translateY(-30px) scale(0.95);
+    transition: transform 0.3s;
+}
+
+.modal.open .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    border: none;
+    background: none;
+    color: #555;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: steelblue;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    padding-right: 30px;
+}
+
+.tab {
+    flex: 1;
+    padding: 9px;
+    border: none;
+    border-bottom: 3px solid #ddd;
+    background: none;
+    color: #555;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab.active {
+    border-bottom-color: steelblue;
+    color: steelblue;
+}
+
+.tab-panel {
+    display: none;
+    border: none;
+    padding: 0;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    padding: 25px 0;
+    background: #354650;
+    color: white;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.footer .logo,
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer .logo span {
+    color: lightblue;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.footer a:hover {
+    color: lightblue;
+}
+
+/* ================= BACK TO TOP (плавний перехід) ================= */
+.back-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: steelblue;
+    color: white;
+    font-size: 26px;
+    text-decoration: none;
+    box-shadow: 0 3px 10px #0003;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s, background 0.3s;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: #285f85;
+}
+
+/* ================= АНІМАЦІЯ ПОЯВИ ПРИ ПРОКРУТЦІ ================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card.reveal.visible:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px #0002;
+}
+
+/* ================= МЕДІА-ЗАПИТИ ================= */
+
+/* Планшети та вузькі ноутбуки: меню згортається в бургер */
+@media (max-width: 1000px) {
+    .navigation {
+        flex-wrap: wrap;
+    }
+
+    .burger {
+        display: flex;
+        order: 2;
+        margin-left: auto;
+    }
+
+    .search {
+        order: 3;
+    }
+
+    .sign-in {
+        order: 4;
+    }
+
+    .menu {
+        order: 5;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 7px;
+        background: white;
+        overflow: hidden;
+    }
+
+    .menu.open {
+        display: flex;
+        animation: slideUp 0.3s ease both;
+    }
+
+    .menu > a,
+    .menu-item > a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu .icon {
+        display: inline-block;
+        width: 24px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .menu-item:hover .submenu,
+    .menu-item:focus-within .submenu,
+    .submenu {
+        display: block;
+        position: static;
+        min-width: 0;
+        padding: 0 0 0 49px;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: #f6fafc;
+    }
+
+    .submenu a {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cards,
+    .news,
+    .reviews {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Телефони: Sign in стає нерухомою (fixed) */
+@media (max-width: 650px) {
+    .hero {
+        padding: 45px 0;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .section {
+        padding: 35px 0;
+    }
+
+    .cards,
+    .news,
+    .reviews {
+        grid-template-columns: 1fr;
+    }
+
+    .form-section {
+        flex-direction: column;
+    }
+
+    .form-section > div,
+    .form-section > form {
+        width: 100%;
+    }
+
+    .search {
+        order: 5;
+        width: 100%;
+    }
+
+    .menu {
+        order: 6;
+    }
+
+    /* Нерухома кнопка Sign in */
+    .sign-in {
+        position: fixed;
+        left: 12px;
+        bottom: 12px;
+        z-index: 200;
+        padding: 12px 22px;
+        border-color: steelblue;
+        background: steelblue;
+        color: white;
+        box-shadow: 0 3px 10px #0004;
+    }
+
+    .sign-in:hover {
+        background: #285f85;
+        border-color: #285f85;
+    }
+
+    .statistics {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .back-to-top {
+        right: 12px;
+        bottom: 12px;
+    }
+}
+
+/* Дуже малі екрани */
+@media (max-width: 400px) {
+    .logo {
+        font-size: 24px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .buttons .button,
+    .buttons .reset {
+        flex: 1;
+    }
+}
+
+/* Повага до налаштувань користувача: вимкнути анімації */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
